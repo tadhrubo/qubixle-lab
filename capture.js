@@ -10,7 +10,8 @@ const sites = [
   { url: 'https://mady-bd.vercel.app/', name: 'work-5.jpg' },
   { url: 'https://omoggle.games/', name: 'work-6.jpg' },
   { url: 'https://tanjiddhrubo.github.io/the-grotto-restaurant/', name: 'work-7.jpg' },
-  { url: 'https://forget-me-not-cafe.vercel.app/', name: 'work-8.jpg' }
+  { url: 'https://forget-me-not-cafe.vercel.app/', name: 'work-8.jpg' },
+  { url: 'https://lawnsbydallas--tanjiddhrubo56.replit.app/', name: 'work-9.jpg' }
 ];
 
 const workDir = path.join(__dirname, 'assets', 'work');
