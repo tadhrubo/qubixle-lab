@@ -1,46 +1,50 @@
 export default function Footer() {
   return (
-    <footer
-      className="bg-[#0B0C0E] pt-20 pb-10 font-sans"
-    >
+    <footer className="bg-[#0B0C0E] pt-32 pb-16 font-sans text-[#F4EFE6]">
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12">
 
-        {/* Top */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 pb-14 border-b border-[#F4EFE6]/10"
-        >
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <img
-              src="/assets/qubixle_Q_mono-white_transparent.svg"
-              alt="Qubixle Lab"
-              className="h-9 w-auto mb-3 opacity-90"
-            />
-            <p
-              className="text-[10px] font-semibold tracking-widest uppercase mb-4 text-[#F4EFE6]/50 font-display"
-            >
-              Qubixle Lab
+        {/* Blueprint Top Header Bar */}
+        <div className="flex items-center justify-between pb-12 border-b border-[#F4EFE6]/10 font-mono text-[10px] tracking-[0.22em] text-[#F4EFE6]/40 uppercase">
+          <span>[ QUBIXLE_LAB // DIGITAL_STUDIO ]</span>
+          <span className="text-[#D9642C]">// US & EU OPERATIONS</span>
+        </div>
+
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-12 py-16 border-b border-[#F4EFE6]/10">
+          
+          {/* Column 1: Brand & Statement */}
+          <div className="md:col-span-5 flex flex-col gap-6">
+            <div className="flex items-center gap-3">
+              <img
+                src="/assets/qubixle_Q_mono-white_transparent.svg"
+                alt="Qubixle Lab"
+                className="h-8 w-auto opacity-90"
+              />
+              <span className="font-display text-sm font-semibold tracking-widest uppercase text-[#F4EFE6]">
+                Qubixle Lab
+              </span>
+            </div>
+            
+            <p className="font-sans text-xs leading-relaxed text-[#F4EFE6]/50 max-w-sm tracking-wide">
+              Hand-coded websites & digital systems for ambitious businesses across the US and Europe. Built for speed, clarity, and conversion.
             </p>
-            <p
-              className="text-xs leading-relaxed max-w-[24ch] text-[#F4EFE6]/60 tracking-wide"
-            >
-              Websites for businesses that never got around to it. Serving small businesses across the US and Europe.
-            </p>
+
+            <span className="font-mono text-[10px] text-[#D9642C] tracking-widest uppercase">
+              [ DIRECT: QUBIXLELAB@GMAIL.COM ]
+            </span>
           </div>
 
-          {/* Sitemap */}
-          <div>
-            <h4
-              className="text-[10px] font-semibold tracking-widest uppercase mb-5 text-[#F4EFE6]/30 font-display"
-            >
-              Sitemap
+          {/* Column 2: Sitemap */}
+          <div className="md:col-span-3 flex flex-col gap-5">
+            <h4 className="font-mono text-[10px] font-semibold tracking-[0.22em] text-[#F4EFE6]/40 uppercase">
+              [ INDEX ]
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 font-mono text-xs">
               {['Work', 'Services', 'Process', 'Pricing', 'Contact'].map((l) => (
                 <li key={l}>
                   <a
                     href={`#${l.toLowerCase()}`}
-                    className="text-xs tracking-wide text-[#F4EFE6]/60 hover:text-[#D9642C] transition-colors duration-200"
+                    className="text-[#F4EFE6]/60 hover:text-[#D9642C] transition-colors duration-200 uppercase tracking-widest"
                   >
                     {l}
                   </a>
@@ -49,66 +53,54 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h4
-              className="text-[10px] font-semibold tracking-widest uppercase mb-5 text-[#F4EFE6]/30 font-display"
-            >
-              Contact
+          {/* Column 3: Contact & Info */}
+          <div className="md:col-span-2 flex flex-col gap-5">
+            <h4 className="font-mono text-[10px] font-semibold tracking-[0.22em] text-[#F4EFE6]/40 uppercase">
+              [ CONTACT ]
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 font-mono text-xs text-[#F4EFE6]/60 uppercase tracking-widest">
               <li>
                 <a
                   href="mailto:qubixlelab@gmail.com"
-                  className="text-xs tracking-wide text-[#F4EFE6]/60 hover:text-[#D9642C] transition-colors duration-200"
+                  className="hover:text-[#D9642C] transition-colors duration-200"
                 >
-                  qubixlelab@gmail.com
+                  EMAIL US
                 </a>
               </li>
               <li>
-                <span
-                  className="text-xs tracking-wide text-[#F4EFE6]/40"
-                >
-                  Remote — US & EU hours
-                </span>
+                <span className="text-[#F4EFE6]/30">REMOTE / US & EU</span>
               </li>
             </ul>
           </div>
 
-          {/* Elsewhere */}
-          <div>
-            <h4
-              className="text-[10px] font-semibold tracking-widest uppercase mb-5 text-[#F4EFE6]/30 font-display"
-            >
-              Elsewhere
+          {/* Column 4: Elsewhere */}
+          <div className="md:col-span-2 flex flex-col gap-5">
+            <h4 className="font-mono text-[10px] font-semibold tracking-[0.22em] text-[#F4EFE6]/40 uppercase">
+              [ ELSEWHERE ]
             </h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 font-mono text-xs">
               <li>
                 <a
                   href="https://www.instagram.com/qubixlelab?igsh=MTl5Nng0ZmFjMm8yaQ=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs tracking-wide text-[#F4EFE6]/60 hover:text-[#D9642C] transition-colors duration-200"
+                  className="text-[#F4EFE6]/60 hover:text-[#D9642C] transition-colors duration-200 uppercase tracking-widest"
                 >
-                  Instagram
+                  INSTAGRAM
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="flex items-center justify-between flex-wrap gap-4 pt-6">
-          <span
-            className="text-[11px] text-[#F4EFE6]/40 tracking-wide"
-          >
-            © 2026 Qubixle Lab. All rights reserved.
-          </span>
+        {/* Bottom Bar */}
+        <div className="flex items-center justify-between flex-wrap gap-4 pt-8 font-mono text-[10px] text-[#F4EFE6]/40 tracking-widest uppercase">
+          <span>© 2026 QUBIXLE LAB. ALL RIGHTS RESERVED.</span>
           <a
             href="#top"
-            className="group flex items-center gap-2 text-[11px] text-[#F4EFE6]/60 hover:text-[#D9642C] transition-colors duration-200 tracking-wide"
+            className="group flex items-center gap-2 text-[#F4EFE6]/60 hover:text-[#D9642C] transition-colors duration-200"
           >
-            Back to top
+            BACK TO TOP
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-y-1">
               <path d="M12 19V5M5 12l7-7 7 7" />
             </svg>

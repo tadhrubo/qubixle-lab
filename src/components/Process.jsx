@@ -1,108 +1,139 @@
-import { motion } from 'framer-motion'
-
-const ACCENT = '#D9642C'
-const ease = [0.22, 1, 0.36, 1]
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 
 const steps = [
   {
-    num: '01',
-    title: 'Discovery',
-    desc: "A short call about your business, your customers, and what the site actually needs to do for you.",
+    code: 'STAGE_01',
+    title: 'DISCOVER',
+    subtitle: 'Scope & Architecture',
+    desc: 'Discovery call to map out goals, target audience, and explicit requirements. Zero assumptions.',
   },
   {
-    num: '02',
-    title: 'Design',
-    desc: "A real design, built for your business, not a theme. You see and approve it before a single line of code gets written.",
+    code: 'STAGE_02',
+    title: 'DESIGN',
+    subtitle: 'Interface & Systems',
+    desc: 'Bespoke UI design in high fidelity. You review and approve exact layouts before code is written.',
   },
   {
-    num: '03',
-    title: 'Build',
-    desc: "We build it clean, test it on real devices, and get the basics of search set up from day one.",
+    code: 'STAGE_03',
+    title: 'BUILD',
+    subtitle: 'Code & Performance',
+    desc: 'Hand-crafted React & Vite implementation. Built for lightning speed, mobile responsiveness, and SEO.',
   },
   {
-    num: '04',
-    title: 'Launch',
-    desc: "Your site goes live on your own domain. We stay on for the first month to catch anything that comes up.",
+    code: 'STAGE_04',
+    title: 'LAUNCH',
+    subtitle: 'Deploy & Support',
+    desc: 'Production deployment to your custom domain. Includes 30 days of direct post-launch monitoring.',
   },
 ]
 
+const ease = [0.22, 1, 0.36, 1]
+
 export default function Process() {
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start 70%', 'end 50%'],
+  })
+
+  const progressLineWidth = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
+
   return (
     <section
       id="process"
-      className="bg-[#0B0C0E] py-28 md:py-36 font-sans border-b border-[#F4EFE6]/10"
+      ref={containerRef}
+      className="bg-[#0B0C0E] py-40 md:py-52 border-b border-[#F4EFE6]/10 font-sans text-[#F4EFE6] relative overflow-hidden"
     >
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12">
-
-        {/* Header */}
+        
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease }}
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-8 mb-20 md:mb-24"
+          transition={{ duration: 1, ease }}
+          className="mb-24 md:mb-32"
         >
-          <div>
-            <span
-              className="text-[10px] font-semibold tracking-widest uppercase flex items-center gap-2 text-[#D9642C] font-display"
-            >
-              Process
-              <span className="inline-block w-6 h-px bg-[#D9642C]" />
-            </span>
-            <h2
-              className="mt-5 font-semibold text-[#F4EFE6] leading-none tracking-tight font-display"
-              style={{ fontSize: 'clamp(1.8rem, 4vw, 3.5rem)', lineHeight: 0.95 }}
-            >
-              Four steps.<br />
-              <span className="text-[#F4EFE6]/35">No surprises.</span>
-            </h2>
+          <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.22em] text-[#D9642C] uppercase mb-6">
+            <span>[ SECTION 03 // PROCESS TIMELINE ]</span>
+            <span className="w-12 h-px bg-[#D9642C]" />
           </div>
-          <p
-            className="text-sm leading-relaxed sm:text-right max-w-xs text-[#F4EFE6]/40 tracking-wide"
+
+          <h2
+            className="font-display font-semibold text-[#F4EFE6] leading-none tracking-tight"
+            style={{ fontSize: 'clamp(2.2rem, 5.5vw, 5.5rem)', lineHeight: 0.92 }}
           >
-            You know exactly what happens next at every stage, and you approve the design before we build anything.
-          </p>
+            Construction Process<br />
+            <span className="text-[#F4EFE6]/35">Four stages. Zero surprises.</span>
+          </h2>
+          
+          <div className="mt-8 w-24 h-px bg-[#D9642C]" />
         </motion.div>
 
-        {/* Steps Timeline Container */}
-        <div className="relative border-t border-[#F4EFE6]/10">
-          {/* Thin vertical connecting line in bone-at-20%-opacity */}
-          <div
-            className="absolute left-[16px] top-6 bottom-6 w-px bg-[#F4EFE6]/20 hidden sm:block"
+        {/* Blueprint Horizontal Construction Line */}
+        <div className="relative mb-20 hidden md:block">
+          {/* Base hairline track */}
+          <div className="w-full h-px bg-[#F4EFE6]/15 absolute top-[14px] left-0" />
+          
+          {/* Animated copper scroll line */}
+          <motion.div
+            style={{ width: progressLineWidth }}
+            className="h-px bg-[#D9642C] absolute top-[14px] left-0 shadow-[0_0_8px_#D9642C]"
           />
 
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.num}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ delay: i * 0.07, duration: 0.5, ease }}
-              className="group relative grid gap-6 py-8 md:py-10 items-start border-b border-[#F4EFE6]/10 transition-colors duration-300 hover:bg-[#F4EFE6]/[0.015]"
-              style={{
-                gridTemplateColumns: '44px 1fr',
-              }}
-            >
-              {/* Number sitting in a copper-outlined circle */}
-              <div className="flex items-center justify-center z-10 bg-[#0B0C0E]">
-                <div className="w-8 h-8 rounded-full border border-[#D9642C] text-[#D9642C] flex items-center justify-center font-semibold text-[11px] font-display shadow-sm">
-                  {step.num}
+          {/* Blueprint Horizontal Milestones */}
+          <div className="grid grid-cols-4 relative z-10">
+            {steps.map((s, i) => (
+              <div key={s.title} className="flex flex-col items-start pr-6">
+                {/* Small circular node */}
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-7 h-7 rounded-full border border-[#D9642C] bg-[#0B0C0E] flex items-center justify-center text-[#D9642C] font-mono text-[10px] font-semibold">
+                    0{i + 1}
+                  </div>
+                  <span className="font-mono text-[9px] text-[#F4EFE6]/40 uppercase tracking-widest">
+                    [{s.code}]
+                  </span>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="sm:grid gap-6" style={{ gridTemplateColumns: '1fr 1.6fr' }}>
-                <h3
-                  className="text-lg sm:text-xl font-semibold text-[#F4EFE6] tracking-wide mb-3 sm:mb-0 font-display group-hover:text-white transition-colors"
-                >
-                  {step.title}
+                <h3 className="font-display text-xl font-semibold text-[#F4EFE6] tracking-wider uppercase mb-2">
+                  {s.title}
                 </h3>
-                <p
-                  className="text-sm leading-relaxed text-[#F4EFE6]/40 tracking-wide"
-                >
-                  {step.desc}
+                <span className="font-mono text-[11px] text-[#D9642C] tracking-widest uppercase mb-3">
+                  {s.subtitle}
+                </span>
+                <p className="text-xs text-[#F4EFE6]/40 leading-relaxed max-w-[24ch]">
+                  {s.desc}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile View Timeline (Vertical Blueprint) */}
+        <div className="md:hidden flex flex-col gap-12 relative border-l border-[#F4EFE6]/15 pl-6">
+          {steps.map((s, i) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 1, ease, delay: i * 0.1 }}
+              className="relative flex flex-col gap-2"
+            >
+              {/* Circular node positioning */}
+              <div className="absolute -left-[37px] top-0 w-6 h-6 rounded-full border border-[#D9642C] bg-[#0B0C0E] flex items-center justify-center text-[#D9642C] font-mono text-[9px]">
+                0{i + 1}
+              </div>
+              <span className="font-mono text-[10px] text-[#D9642C] tracking-widest uppercase">
+                [{s.code}]
+              </span>
+              <h3 className="font-display text-xl font-semibold text-[#F4EFE6] tracking-wider uppercase">
+                {s.title}
+              </h3>
+              <p className="text-xs text-[#F4EFE6]/50 leading-relaxed">
+                {s.desc}
+              </p>
             </motion.div>
           ))}
         </div>

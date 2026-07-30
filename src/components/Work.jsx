@@ -1,146 +1,232 @@
 import { motion } from 'framer-motion'
 
-const ACCENT = '#D9642C'
-const ease = [0.22, 1, 0.36, 1]
-
 const projects = [
   {
+    num: '01',
+    code: 'PRJ_NICOLETTA',
     title: "Nicoletta's Family Restaurant",
-    category: 'Restaurant — Altoona, PA',
+    category: 'Restaurant & Hospitality — Altoona, PA',
     image: '/assets/work/work-1.jpg',
     href: 'https://nicoletta-s.vercel.app/',
+    aspect: '16/10',
+    location: 'ALTOONA, PA',
+    year: '2026',
   },
   {
+    num: '02',
+    code: 'PRJ_CHEFS',
     title: "Chef's Lounge",
-    category: 'Restaurant',
+    category: 'Fine Dining & Culinary Experience',
     image: '/assets/work/work-2.jpg',
     href: 'https://chefs-lounge.vercel.app/',
+    aspect: '16/10',
+    location: 'NEW YORK, NY',
+    year: '2026',
   },
   {
+    num: '03',
+    code: 'PRJ_WOLFIES',
     title: 'Wolfies Restaurant & Sports Bar',
     category: 'Sports Bar & Restaurant',
     image: '/assets/work/work-3.jpg',
     href: 'https://wolfies-restaurant.vercel.app/',
+    aspect: '16/10',
+    location: 'DALLAS, TX',
+    year: '2025',
   },
   {
+    num: '04',
+    code: 'PRJ_LAFORGE',
     title: "LaForge's BBQ",
     category: 'BBQ Restaurant — Carterville',
     image: '/assets/work/work-4.jpg',
     href: 'https://la-forge-s-bbq.vercel.app/',
+    aspect: '16/10',
+    location: 'CARTERVILLE, IL',
+    year: '2025',
   },
   {
+    num: '05',
+    code: 'PRJ_MADY',
     title: 'Mady Restaurant',
-    category: 'Restaurant — Fresh, Bold Flavors',
+    category: 'Fresh & Bold Flavors',
     image: '/assets/work/work-5.jpg',
     href: 'https://mady-bd.vercel.app/',
+    aspect: '16/10',
+    location: 'DHAKA, BD',
+    year: '2025',
   },
   {
+    num: '06',
+    code: 'PRJ_GROTTO',
     title: 'The Grotto',
     category: 'Caribbean-Italian Fusion — Brooklyn',
     image: '/assets/work/work-7.jpg',
     href: 'https://tanjiddhrubo.github.io/the-grotto-restaurant/',
+    aspect: '16/10',
+    location: 'BROOKLYN, NY',
+    year: '2025',
   },
   {
+    num: '07',
+    code: 'PRJ_FORGETME',
     title: 'Forget Me Not Cafe',
     category: 'Cafe & Bakery — Bristol, UK',
     image: '/assets/work/work-8.jpg',
     href: 'https://forget-me-not-cafe.vercel.app/',
+    aspect: '16/10',
+    location: 'BRISTOL, UK',
+    year: '2025',
   },
   {
+    num: '08',
+    code: 'PRJ_LAWNS',
     title: 'Lawns by Dallas',
-    category: 'Lawn Care & Landscaping',
+    category: 'Lawn Care & Landscaping Services',
     image: '/assets/work/work-9.jpg',
     href: 'https://lawnsbydallas--tanjiddhrubo56.replit.app/',
+    aspect: '16/10',
+    location: 'DALLAS, TX',
+    year: '2025',
   },
 ]
+
+const ease = [0.22, 1, 0.36, 1]
 
 export default function Work() {
   return (
     <section
       id="work"
-      className="bg-[#0B0C0E] py-28 md:py-36 font-sans border-b border-[#F4EFE6]/10"
+      className="bg-[#0B0C0E] py-40 md:py-52 border-b border-[#F4EFE6]/10 font-sans text-[#F4EFE6] relative overflow-hidden"
     >
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-12">
-
+        
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5, ease }}
-          className="mb-20 md:mb-24"
+          transition={{ duration: 1, ease }}
+          className="mb-28 md:mb-40"
         >
-          <span
-            className="text-[10px] font-semibold tracking-widest uppercase flex items-center gap-2 text-[#D9642C] font-display"
-          >
-            Selected Work
-            <span className="inline-block w-6 h-px bg-[#D9642C]" />
-          </span>
+          <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.22em] text-[#D9642C] uppercase mb-6">
+            <span>[ SECTION 01 // SELECTED WORK ]</span>
+            <span className="w-12 h-px bg-[#D9642C]" />
+          </div>
+
           <h2
-            className="mt-5 font-semibold text-[#F4EFE6] leading-none tracking-tight font-display"
-            style={{ fontSize: 'clamp(2rem, 5vw, 4.5rem)', lineHeight: 0.92 }}
+            className="font-display font-semibold text-[#F4EFE6] leading-none tracking-tight"
+            style={{ fontSize: 'clamp(2.2rem, 5.5vw, 5.5rem)', lineHeight: 0.92 }}
           >
             Built for businesses<br />
             <span className="text-[#F4EFE6]/35">that value craft.</span>
           </h2>
-          <p
-            className="mt-5 text-sm leading-relaxed max-w-md text-[#F4EFE6]/40 tracking-wide"
-          >
-            Every Qubixle Lab project starts from zero. No templates. No copy-paste.
-          </p>
+
+          <div className="mt-8 flex items-center gap-6">
+            <div className="w-24 h-px bg-[#D9642C]" />
+            <p className="font-mono text-xs text-[#F4EFE6]/40 uppercase tracking-widest">
+              [ 08 VERIFIED CLIENT PROJECTS ]
+            </p>
+          </div>
         </motion.div>
 
-        {/* Grid */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8"
-        >
-          {projects.map((project, i) => (
-            <motion.a
-              key={project.title}
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ delay: (i % 2) * 0.07, duration: 0.5, ease }}
-              whileHover={{ y: -3 }}
-              className="group block overflow-hidden rounded-sm border border-[#F4EFE6]/10 bg-[#131519] transition-all duration-200 hover:border-[#D9642C] hover:shadow-[0_16px_36px_-10px_rgba(0,0,0,0.9)]"
-            >
-              {/* Image Container */}
-              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-top opacity-85 transition-all duration-500 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:scale-[1.02] group-hover:opacity-100"
-                />
-              </div>
-
-              {/* Info with 1px divider */}
+        {/* Project Alternating Layout Spreads */}
+        <div className="flex flex-col gap-36 md:gap-48">
+          {projects.map((project, i) => {
+            const isEven = i % 2 === 0
+            return (
               <div
-                className="flex items-center justify-between px-6 py-5 border-t border-[#F4EFE6]/10 bg-[#131519]"
+                key={project.title}
+                className="group relative flex flex-col gap-8 border-b border-[#F4EFE6]/10 pb-24 md:pb-32"
               >
-                <div>
-                  <h3
-                    className="font-semibold text-[#F4EFE6] text-sm sm:text-base leading-tight tracking-wide font-display group-hover:text-white transition-colors"
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    className="text-[10px] mt-1 tracking-widest uppercase text-[#F4EFE6]/40"
-                  >
-                    {project.category}
-                  </p>
+                {/* Blueprint Metadata Bar */}
+                <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.2em] text-[#F4EFE6]/40 uppercase pb-2">
+                  <span>[ {project.code} // NO.{project.num} ]</span>
+                  <div className="flex items-center gap-4">
+                    <span>LOC: {project.location}</span>
+                    <span className="text-[#D9642C]">// {project.year}</span>
+                  </div>
                 </div>
-                <svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
-                  className="w-4 h-4 flex-shrink-0 text-[#F4EFE6]/30 transition-all duration-200 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-[#D9642C]"
+
+                {/* Alternating Image & Info Layout */}
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center ${
+                    isEven ? '' : 'md:flex-row-reverse'
+                  }`}
                 >
-                  <path d="M7 17L17 7M7 7h10v10" />
-                </svg>
+                  {/* Large Image Container with Clip-Path Reveal */}
+                  <div className={`w-full ${isEven ? 'md:col-span-8' : 'md:col-span-8 md:order-2'}`}>
+                    <motion.div
+                      initial={{ clipPath: 'inset(100% 0 0 0)' }}
+                      whileInView={{ clipPath: 'inset(0% 0 0 0)' }}
+                      viewport={{ once: true, margin: '-60px' }}
+                      transition={{ duration: 1.2, ease }}
+                      className="relative overflow-hidden w-full bg-[#131519]"
+                      style={{ aspectRatio: '16/10' }}
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top opacity-85 transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.02] group-hover:opacity-100"
+                      />
+
+                      {/* Blueprint Corner Ticks */}
+                      <div className="absolute top-3 left-3 w-2 h-2 border-t border-l border-white/40 pointer-events-none" />
+                      <div className="absolute top-3 right-3 w-2 h-2 border-t border-r border-white/40 pointer-events-none" />
+                      <div className="absolute bottom-3 left-3 w-2 h-2 border-b border-l border-white/40 pointer-events-none" />
+                      <div className="absolute bottom-3 right-3 w-2 h-2 border-b border-r border-white/40 pointer-events-none" />
+                    </motion.div>
+                  </div>
+
+                  {/* Project Info Block (Text follows 120ms later) */}
+                  <div className={`w-full flex flex-col justify-between ${
+                    isEven ? 'md:col-span-4' : 'md:col-span-4 md:order-1'
+                  }`}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 60 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-40px' }}
+                      transition={{ duration: 1, ease, delay: 0.12 }}
+                      className="flex flex-col gap-6"
+                    >
+                      <span className="font-mono text-xs text-[#D9642C] tracking-widest uppercase">
+                        {project.category}
+                      </span>
+
+                      {/* Title with upward hover transition */}
+                      <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-[#F4EFE6] tracking-tight transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                        {project.title}
+                      </h3>
+
+                      {/* Monospace Caption */}
+                      <p className="font-mono text-[11px] text-[#F4EFE6]/40 leading-relaxed uppercase tracking-wider">
+                        Custom interface design, front-end development, and performance optimization for {project.title}.
+                      </p>
+
+                      {/* Hover Arrow + Copper Line Extension */}
+                      <div className="mt-4 flex items-center gap-3">
+                        <span className="text-xs font-mono tracking-widest text-[#F4EFE6]/60 uppercase group-hover:text-white transition-colors">
+                          VIEW PROJECT
+                        </span>
+                        <svg
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
+                          className="w-4 h-4 text-[#D9642C] transition-transform duration-300 ease-out group-hover:translate-x-1.5 group-hover:-translate-y-1.5"
+                        >
+                          <path d="M7 17L17 7M7 7h10v10" />
+                        </svg>
+                      </div>
+
+                      {/* Extending copper line on hover */}
+                      <div className="w-0 h-px bg-[#D9642C] group-hover:w-full transition-all duration-500 ease-out mt-2" />
+                    </motion.div>
+                  </div>
+                </a>
               </div>
-            </motion.a>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
