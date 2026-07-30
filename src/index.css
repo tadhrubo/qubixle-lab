@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --graphite: #0B0C0E;
+    --bone: #F4EFE6;
+    --copper: #D9642C;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0B0C0E;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'General Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0B0C0E;
+    color: #F4EFE6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Clash Display', sans-serif;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+@layer utilities {
+  .text-copper {
+    color: #D9642C;
+  }
+  .border-copper {
+    border-color: #D9642C;
+  }
+  .bg-copper {
+    background-color: #D9642C;
+  }
+  .text-bone {
+    color: #F4EFE6;
+  }
+  .bg-graphite {
+    background-color: #0B0C0E;
+  }
+}
