@@ -69,7 +69,7 @@ export default function Hero() {
             className="h-7 sm:h-9 w-auto"
           />
           <span
-            className="hidden sm:block text-[11px] font-semibold tracking-widest uppercase text-black font-display"
+            className="text-[11px] sm:text-xs font-semibold tracking-widest uppercase text-black font-display"
           >
             Qubixle Lab
           </span>
