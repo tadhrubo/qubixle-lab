@@ -43,7 +43,7 @@ export default function Hero() {
     >
       {/* ── Background Video ── */}
       <video
-        className="absolute inset-0 w-full h-full object-contain sm:object-cover object-center z-0 scale-[1.75] sm:scale-100 transform origin-center transition-transform duration-300"
+        className="absolute inset-0 w-full h-full object-cover object-[25%_center] sm:object-center z-0"
         src="/assets/Qanimation.mp4"
         autoPlay
         loop
