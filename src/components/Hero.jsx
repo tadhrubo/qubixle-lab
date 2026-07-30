@@ -43,7 +43,7 @@ export default function Hero() {
     >
       {/* ── Background Video ── */}
       <video
-        className="absolute inset-0 w-full h-full object-contain sm:object-cover object-center z-0"
+        className="absolute inset-0 w-full h-full object-contain sm:object-cover object-center z-0 scale-[1.75] sm:scale-100 transform origin-center transition-transform duration-300"
         src="/assets/Qanimation.mp4"
         autoPlay
         loop
@@ -51,7 +51,7 @@ export default function Hero() {
         playsInline
       />
       {/* Light overlay so text stays readable */}
-      <div className="absolute inset-0 z-[1] bg-white/10" />
+      <div className="absolute inset-0 z-[1] bg-white/10 pointer-events-none" />
 
       {/* ── Navigation ── */}
       <nav className="relative z-10 flex items-center justify-between px-4 sm:px-8 md:px-12 pt-2 sm:pt-4">
