@@ -1,22 +1,16 @@
-# Qubixle Lab — Website
+# React + Vite
 
-Static site, no build step, no framework, no dependencies to install.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Structure
-    index.html        Markup
-    css/style.css      All styles (custom properties at the top)
-    js/main.js         Nav scroll state, mobile menu, scroll-reveal, hero voxel animation
-    assets/            Logo marks (bone = light version for dark backgrounds, graphite = dark version, copper = accent version)
+Currently, two official plugins are available:
 
-## Run it locally
-Just open index.html in a browser, or use a local server for the best experience
-(VS Code "Live Server" extension, or run `python3 -m http.server` from this folder
-and visit http://localhost:8000).
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Fonts
-Clash Display + General Sans, loaded from Fontshare's CDN in the <head>.
-No local font files needed.
+## React Compiler
 
-## Design tokens
-All colors, fonts, spacing live as CSS custom properties at the top of style.css
-under :root. Change a value there and it propagates everywhere.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
