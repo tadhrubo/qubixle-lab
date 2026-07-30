@@ -39,11 +39,11 @@ export default function Hero() {
 
   return (
     <section
-      className="relative flex flex-col justify-between min-h-[100dvh] sm:min-h-screen overflow-hidden font-sans bg-[#0B0C0E] py-4 sm:py-6"
+      className="relative flex flex-col justify-between min-h-[100dvh] sm:min-h-screen overflow-hidden font-sans bg-white py-4 sm:py-6"
     >
       {/* ── Background Video ── */}
       <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-contain sm:object-cover object-center z-0"
         src="/assets/Qanimation.mp4"
         autoPlay
         loop
@@ -51,7 +51,7 @@ export default function Hero() {
         playsInline
       />
       {/* Light overlay so text stays readable */}
-      <div className="absolute inset-0 z-[1] bg-[#F4EFE6]/20" />
+      <div className="absolute inset-0 z-[1] bg-white/10" />
 
       {/* ── Navigation ── */}
       <nav className="relative z-10 flex items-center justify-between px-4 sm:px-8 md:px-12 pt-2 sm:pt-4">
