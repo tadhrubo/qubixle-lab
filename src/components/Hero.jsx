@@ -50,12 +50,10 @@ export default function Hero() {
         muted
         playsInline
       />
-      {/* Light overlay — stronger on mobile for text readability */}
+      {/* Subtle overlay — bottom-up fade only, doesn't touch the Q */}
       <div className="absolute inset-0 z-[1] pointer-events-none"
-        style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.55) 55%, rgba(255,255,255,0.05) 100%)' }}
+        style={{ background: 'linear-gradient(to top, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 50%)' }}
       />
-      {/* Desktop: minimal overlay */}
-      <div className="absolute inset-0 z-[1] bg-white/5 pointer-events-none hidden sm:block" />
 
       {/* ── Navigation ── */}
       <nav className="relative z-10 flex items-center justify-between px-4 sm:px-8 md:px-12 pt-2 sm:pt-4">
